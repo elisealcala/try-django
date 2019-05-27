@@ -57,7 +57,7 @@ ROOT_URLCONF = 'trydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/macbook/Sites/cursos/try-django/src/templates'],
+        'DIRS': ['/Users/macbook/Sites/cursos/try-django/apps/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
