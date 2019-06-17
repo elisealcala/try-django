@@ -9,7 +9,7 @@
     {% endblock %}
 
     <script>
-        // window.__INITIAL_STATE__ = {{ initial_state| default:'{}'|safe }};
+        window.__INITIAL_STATE__ = {{ initial_state | default:'{}' | safe }};
     </script>
 </body>
 </html>
