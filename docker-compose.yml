@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  try-django:
+    image: try-django
+    build: .
+    ports:
+      - 8000:8000

@@ -7,8 +7,6 @@ __pycache__/
 *.so
 
 .DS_Store
-bin/
-include/
 pip-selfcheck.json
 .idea
 
