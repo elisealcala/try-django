@@ -1,8 +1,10 @@
 version: '2.1'
 
 services:
-  try-django:
-    image: try-django
+  app:
+    image: backend_1
     build: .
     ports:
       - 8000:8000
+    volumnes:
+      - ./apps:/app
