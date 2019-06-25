@@ -25,7 +25,8 @@ RUN python3 -m pip install -r /requirements.txt
 
 RUN apk del .tmp-build-deps
 
-CMD ["python3", "-m", "try-django"]
+# Command
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # Using pipenv:
 #RUN python3 -m pip install pipenv
