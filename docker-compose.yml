@@ -5,11 +5,11 @@ services:
     image: backend_1
     build: .
     ports:
-      - 8000:8000
+      - "0.0.0.0:8000:8000"
     volumes:
       - ./apps:/app
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py runserver"
     environment:
       - DB_HOST=postgres
       - DB_NAME=app
@@ -20,7 +20,14 @@ services:
   
   postgres:
     image: postgres:11-alpine
+    ports:
+      - "0.0.0.0:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     environment: 
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123456
+volumes:
+  postgres_data:
+    external: true
