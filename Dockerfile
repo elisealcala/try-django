@@ -16,11 +16,15 @@ COPY ./apps/requirements.txt /requirements.txt
 WORKDIR /app
 ADD . /app
 
-RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
-# RUN apk add --no-cache gcc libc-dev unixodbc-dev
+# RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apk add --update --no-cache postgresql-client
+RUN apk add --update --no-cache --virtual .tmp-build-deps gcc libc-dev linux-headers postgresql-dev
 
 # Using pip:
 RUN python3 -m pip install -r /requirements.txt
+
+RUN apk del .tmp-build-deps
+
 CMD ["python3", "-m", "try-django"]
 
 # Using pipenv:

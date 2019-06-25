@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'trydjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'try_django',
-        'USER': 'elizalc',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_HOST'),
         'PORT': '',
     }
 }
