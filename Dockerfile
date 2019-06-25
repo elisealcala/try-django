@@ -16,7 +16,8 @@ COPY ./apps/requirements.txt /requirements.txt
 WORKDIR /app
 ADD . /app
 
-RUN apk add --no-cache gcc libc-dev unixodbc-dev
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+# RUN apk add --no-cache gcc libc-dev unixodbc-dev
 
 # Using pip:
 RUN python3 -m pip install -r /requirements.txt
