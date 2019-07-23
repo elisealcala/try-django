@@ -22,6 +22,4 @@ from blog.views import ArticleListView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
-    path('products', ProductsView.as_view(), name='products'),
-    path('blog', ArticleListView.as_view(), name='article-list')
 ]
