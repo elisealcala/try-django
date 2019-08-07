@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
+from graphene_django.views import GraphQLView
 from home.views import home_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
     path(r'', include(('account.urls', 'notification'), namespace='account_app'))
 ]
